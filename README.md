@@ -1,4 +1,4 @@
-This web automation suite showcases automation of Apple e-commerce shop website. It uses the following depedencies.
+This web automation suite showcases automation of Apple e-commerce shop website. It uses the following dependencies.
 
 <pre>
 TestNG
