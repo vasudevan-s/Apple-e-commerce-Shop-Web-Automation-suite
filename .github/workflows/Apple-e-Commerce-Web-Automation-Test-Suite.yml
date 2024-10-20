@@ -11,6 +11,12 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 21
+          cache: maven
+
+      - name: Install Google Chrome 
+        run: |
+            chmod +x ./scripts/InstallChrome.sh
+            ./scripts/InstallChrome.sh
 
       - uses: actions/checkout@v4
         with:
@@ -20,6 +26,7 @@ jobs:
       - name: Install unified test framework dependency with Maven
         run: |
             mvn clean install --file pom.xml
+            cache: maven
   
 
       - uses: actions/checkout@v4
@@ -30,9 +37,10 @@ jobs:
       - name: Install test data framework dependency with Maven
         run: |
           mvn clean install --file pom.xml
+          cache: maven
 
       - uses: actions/checkout@v4
       - name: Build project with Maven
         run: |
-          mvn clean test -Dsuites=src/test/resources/Web.xml -Dthreads=3 package --file pom.xml
+          mvn clean test -Dsuites=src/test/resources/Web.xml -Dthreads=1 package --file pom.xml
  #         mvn -B package --file pom.xml
