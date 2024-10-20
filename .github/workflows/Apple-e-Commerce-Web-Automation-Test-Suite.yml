@@ -11,6 +11,7 @@ jobs:
   build_test:
     name: Build and Test
     runs-on: ubuntu-latest
+
     steps:
       - name: Set up JDK
         uses: actions/setup-java@v4
@@ -25,29 +26,29 @@ jobs:
 #            chrome-version: 120
             install-chromedriver: true
 
-      - uses: actions/checkout@v4
+      - name: Checkout source for UnifiedTestFramework
+        uses: actions/checkout@v4
         with:
           ref: main
-          repository: vasudevan-s/UnifiedTestFramework
+          repository: vasudevan-s/Unified Test Framework
 
-      - name: Install unified test framework dependency with Maven
+      - name: Install unified test framework dependency
         run: |
             mvn clean install --file pom.xml
- #           cache: maven
   
-
-      - uses: actions/checkout@v4
+      - name: Checkout source for Test Data Framework
+        uses: actions/checkout@v4
         with:
             ref: main
             repository: vasudevan-s/TestDataFramework-Java
 
-      - name: Install test data framework dependency with Maven
+      - name: Install test data framework dependency
         run: |
           mvn clean install --file pom.xml
-#          cache: maven
 
-      - uses: actions/checkout@v4
+      - name: Checkout source for ${{ github.event.repository.name }}
+        uses: actions/checkout@v4
+
       - name: Build project with Maven
         run: |
           mvn clean test -Dsuites=src/test/resources/Web.xml -Dthreads=1 package --file pom.xml
- #         mvn -B package --file pom.xml
