@@ -22,7 +22,7 @@ jobs:
       - name: Install Google Chrome 
         uses: browser-actions/setup-chrome@v1
         with:
-            chrome-version: 120
+#            chrome-version: 120
             install-chromedriver: true
 
       - uses: actions/checkout@v4
