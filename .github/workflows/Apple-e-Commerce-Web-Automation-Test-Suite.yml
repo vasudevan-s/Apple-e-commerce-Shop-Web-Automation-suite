@@ -17,7 +17,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 21
-          cache: maven
+#          cache: maven
 
       - name: Install Google Chrome 
         uses: browser-actions/setup-chrome@v1
