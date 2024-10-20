@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           ref: main
-          repository: vasudevan-s/Unified Test Framework
+          repository: vasudevan-s/UnifiedTestFramework
 
       - name: Install unified test framework dependency
         run: |
@@ -52,3 +52,4 @@ jobs:
       - name: Build project with Maven
         run: |
           mvn clean test -Dsuites=src/test/resources/Web.xml -Dthreads=1 package --file pom.xml
+ #         mvn -B package --file pom.xml
