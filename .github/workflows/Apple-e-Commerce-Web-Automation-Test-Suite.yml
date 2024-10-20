@@ -17,12 +17,17 @@ jobs:
           ref: main
           repository: vasudevan-s/UnifiedTestFramework
 
+      - name: Install unified test framework dependency with Maven
+        run: |
+            mvn clean install --file pom.xml
+  
+
       - uses: actions/checkout@v4
         with:
             ref: main
             repository: vasudevan-s/TestDataFramework-Java
 
-      - name: Install unified test framework dependency with Maven
+      - name: Install test data framework dependency with Maven
         run: |
           mvn clean install --file pom.xml
 
