@@ -11,7 +11,7 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: 21
-          cache: maven
+#          cache: maven
 
       - uses: actions/checkout@v4
         with:
@@ -21,7 +21,7 @@ jobs:
       - name: Install unified test framework dependency with Maven
         run: |
             mvn clean install --file pom.xml
-            cache: maven
+ #           cache: maven
   
 
       - uses: actions/checkout@v4
@@ -32,7 +32,7 @@ jobs:
       - name: Install test data framework dependency with Maven
         run: |
           mvn clean install --file pom.xml
-          cache: maven
+#          cache: maven
 
       - uses: actions/checkout@v4
       - name: Build project with Maven
