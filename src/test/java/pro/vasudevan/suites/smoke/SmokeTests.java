@@ -40,7 +40,7 @@ public class SmokeTests extends TestBase {
         Assert.assertTrue(homePage.didGlobalNavLinksExist(), "Global links count is incorrect");
     }
 
-    @Test(priority = 3, dataProviderClass = CSVTestDataProvider.class, dataProvider = "TestDataProvider", enabled = false)
+    @Test(priority = 3, dataProviderClass = CSVTestDataProvider.class, dataProvider = "TestDataProvider")
     @TestData(file = "topLevelResourceNames.csv")
     public void verifyTopLevelLinksTest(LinkedHashMap<String, String> linkedHashMap) {
         Assert.assertTrue(homePage.areTopLevelLinksAvailable(linkedHashMap), "Top Level resource links not matching with expected data");
