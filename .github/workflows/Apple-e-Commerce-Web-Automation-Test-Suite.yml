@@ -1,11 +1,11 @@
 name: Main
 on:
-    push:
-      branches: [ "main" ]
-    pull_request:
-      branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
-    workflow_dispatch:
+        workflow_dispatch:
 
 jobs:
   build_test:
@@ -19,13 +19,11 @@ jobs:
           java-version: 21
 #          cache: maven
 
-      - name: Install Firefox Browser
-        id: setup-firefox
-        uses: browser-actions/setup-firefox@v1
-#        uses: browser-actions/setup-chrome@v1
-#        with:
-#            chrome-version: 120
-#            install-chromedriver: true
+      - name: Install Google Chrome 
+        uses: browser-actions/setup-chrome@v1
+        with:
+            chrome-version: 120
+            install-chromedriver: true
 
       - uses: actions/checkout@v4
         with:
