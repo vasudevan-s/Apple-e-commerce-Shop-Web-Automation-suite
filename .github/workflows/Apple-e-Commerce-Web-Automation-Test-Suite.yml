@@ -15,7 +15,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
-          repository: vasudevan-s/sha-core
+          repository: vasudevan-s/UnifiedTestFramework
+
+      - uses: actions/checkout@v4
+        with:
+            ref: main
+            repository: vasudevan-s/TestDataFramework-Java
 
       - name: Install unified test framework dependency with Maven
         run: |
