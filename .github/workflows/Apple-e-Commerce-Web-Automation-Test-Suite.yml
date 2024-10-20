@@ -13,6 +13,11 @@ jobs:
           java-version: 21
 #          cache: maven
 
+      - name: Install Google Chrome 
+        run: |
+            chmod +x ./scripts/InstallChrome.sh
+            ./scripts/InstallChrome.sh
+
       - uses: actions/checkout@v4
         with:
           ref: main
