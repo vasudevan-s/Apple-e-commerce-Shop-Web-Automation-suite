@@ -19,11 +19,13 @@ jobs:
           java-version: 21
 #          cache: maven
 
-      - name: Install Google Chrome 
-        uses: browser-actions/setup-chrome@v1
-        with:
+      - name: Install Firefox
+        id: setup-firefox
+        uses: browser-actions/setup-firefox@v1
+#        uses: browser-actions/setup-chrome@v1
+#        with:
 #            chrome-version: 120
-            install-chromedriver: true
+#            install-chromedriver: true
 
       - uses: actions/checkout@v4
         with:
