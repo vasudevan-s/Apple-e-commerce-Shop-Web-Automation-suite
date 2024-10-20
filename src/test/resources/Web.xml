@@ -6,7 +6,7 @@
 
     <test name="Smoke-Tests-Chrome" enabled="true">
         <parameter name="browserName" value="chrome"/>
-        <parameter name="headless" value="false"/>
+        <parameter name="headless" value="true"/>
         <parameter name="launchURL" value="https://apple.com/shop"/>
         <classes>
             <class name="pro.vasudevan.suites.smoke.SmokeTests"/>
@@ -15,7 +15,7 @@
 
     <test name="Smoke-Tests-Firefox" enabled="false">
         <parameter name="browserName" value="firefox"/>
-        <parameter name="headless" value="false"/>
+        <parameter name="headless" value="true"/>
         <parameter name="launchURL" value="https://apple.com/shop"/>
         <classes>
             <class name="pro.vasudevan.suites.smoke.SmokeTests"/>
@@ -24,7 +24,7 @@
 
     <test name="Smoke-Tests-Safari" enabled="false">
         <parameter name="browserName" value="safari"/>
-        <parameter name="headless" value="false"/>
+        <parameter name="headless" value="true"/>
         <parameter name="launchURL" value="https://apple.com/shop"/>
         <classes>
             <class name="pro.vasudevan.suites.smoke.SmokeTests"/>
