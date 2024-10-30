@@ -29,11 +29,13 @@ public final class HomePage extends ElementBase implements IBasePage {
     public boolean didProductLinksExist() {return productLinkImages.get().size() == 11;}
 
     private boolean compare(List<WebElement> links, LinkedHashMap<String, String> linkedHashMap) {
-        List<String> list = links.stream()
+        List<String> actual = links.stream()
                 .map(element -> element.getText().trim())
                 .toList();
+        System.out.println("Actual: " + actual);
         List<String> expected = linkedHashMap.values().stream().toList();
-        return list.equals(expected);
+        System.out.println("Expected: " + expected);
+        return actual.equals(expected);
     }
 
     public boolean areTopLevelLinksAvailable(LinkedHashMap<String, String> linkedHashMap) {

@@ -20,7 +20,7 @@ public class SmokeTests extends TestBase {
 
     private HomePage homePage;
 
-    @BeforeClass(alwaysRun = true)
+    @BeforeClass
     public void beforeClass() {
         homePage = new HomePage();
     }

@@ -4,7 +4,12 @@
 <!-- Created By: Vasudevan Sampath -->
 <suite name="Apple e-Commerce Shop Automation Suite" parallel="false" thread-count="1" verbose="1">
 
-    <test name="Smoke-Tests-Chrome" enabled="true">
+    <listeners>
+        <listener class-name="pro.vasudevan.automation.unifiedtestframework.listeners.SuiteListener"/>
+        <listener class-name="pro.vasudevan.automation.unifiedtestframework.listeners.TestListener"/>
+    </listeners>
+
+    <test name="Smoke-Tests-Chrome" enabled="false">
         <parameter name="browserName" value="chrome"/>
         <parameter name="headless" value="true"/>
         <parameter name="launchURL" value="https://apple.com/shop"/>
@@ -22,7 +27,7 @@
         </classes>
     </test>
 
-    <test name="Smoke-Tests-Safari" enabled="false">
+    <test name="Smoke-Tests-Safari" enabled="true">
         <parameter name="browserName" value="safari"/>
         <parameter name="headless" value="true"/>
         <parameter name="launchURL" value="https://apple.com/shop"/>
